@@ -178,14 +178,6 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
         String jsonString = gson.toJson(settingDataStruct);
         JsonFileWriteAndRead.saveSettingFile(fileName, jsonString);
         Toast.makeText(this, "参数设置完毕", Toast.LENGTH_SHORT).show();
-        //写入ip和端口
-//        String ip = ipSet.getText().toString();
-//        String port = portSet.getText().toString();
-//        if (ip.isEmpty() || port.isEmpty()) {
-//            Toast.makeText(this, "地址或端口为空", Toast.LENGTH_SHORT).show();
-//        } else {
-//            JsonFileWriteAndRead.saveIPandPort(ip + ":" + port);
-//        }
     }
 
     public void onReading(View view) {
