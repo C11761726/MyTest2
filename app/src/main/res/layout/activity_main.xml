@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <EditText
+        android:id="@+id/widthSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:hint="设置宽度"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/heightSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="设置高度"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="@+id/widthSet"
+        app:layout_constraintTop_toBottomOf="@+id/widthSet" />
+
+    <EditText
+        android:id="@+id/leftSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="左边距离"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="@+id/widthSet"
+        app:layout_constraintTop_toBottomOf="@+id/heightSet" />
+
+    <EditText
+        android:id="@+id/topSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="上边距离"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="@+id/widthSet"
+        app:layout_constraintTop_toBottomOf="@+id/leftSet" />
+
+    <TextView
+        android:id="@+id/picpath"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="图片的路径"
+        app:layout_constraintLeft_toLeftOf="@+id/widthSet"
+        app:layout_constraintTop_toBottomOf="@+id/topSet" />
+
+    <EditText
+        android:id="@+id/ipSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="服务器IP设置"
+        android:text="192.168.1.49"
+        app:layout_constraintLeft_toLeftOf="@+id/widthSet"
+        app:layout_constraintTop_toBottomOf="@+id/picpath" />
+
+    <EditText
+        android:id="@+id/portSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="端口设置"
+        android:inputType="number"
+        android:text="3000"
+        app:layout_constraintLeft_toRightOf="@+id/ipSet"
+        app:layout_constraintTop_toBottomOf="@+id/picpath" />
+
+    <Button
+        android:id="@+id/set_ip_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:onClick="onSetIPAndPort"
+        android:text="设置IP和Port"
+        app:layout_constraintLeft_toRightOf="@+id/portSet"
+        app:layout_constraintTop_toBottomOf="@+id/picpath" />
+
+    <Button
+        android:id="@+id/read_ip_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:onClick="onReadIPAndPort"
+        android:text="读取IP和Port"
+        app:layout_constraintLeft_toRightOf="@+id/set_ip_port"
+        app:layout_constraintTop_toBottomOf="@+id/picpath" />
+
+    <TextView
+        android:id="@+id/android_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="设备名："
+        app:layout_constraintBaseline_toBaselineOf="@+id/android_name"
+        app:layout_constraintLeft_toLeftOf="@+id/widthSet" />
+
+    <EditText
+        android:id="@+id/android_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="设备名设置"
+        android:text="android_test"
+        app:layout_constraintLeft_toRightOf="@+id/android_name_text"
+        app:layout_constraintTop_toBottomOf="@+id/portSet" />
+
+    <Button
+        android:id="@+id/set_android_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:onClick="onSetAndroidName"
+        android:text="设置设备名"
+        app:layout_constraintLeft_toRightOf="@+id/android_name"
+        app:layout_constraintTop_toBottomOf="@+id/portSet" />
+
+    <Button
+        android:id="@+id/read_android_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:onClick="onReadAndroidName"
+        android:text="读取设备名"
+        app:layout_constraintLeft_toRightOf="@+id/set_android_name"
+        app:layout_constraintTop_toBottomOf="@+id/portSet" />
+
+    <Button
+        android:id="@+id/select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onSelect"
+        android:text="选择图片"
+        app:layout_constraintBottom_toBottomOf="@+id/picpath"
+        app:layout_constraintLeft_toRightOf="@+id/picpath" />
+
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:onClick="onSetting"
+        android:text="设置"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onReading"
+        android:text="读取"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/setting"
+        app:layout_constraintRight_toLeftOf="@+id/startApp" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onResetting"
+        android:text="重置"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/read"
+        app:layout_constraintRight_toLeftOf="@+id/startApp" />
+
+    <Button
+        android:id="@+id/startApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onBinderService"
+        android:text="启动视频对讲服务"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/reset" />
+
+    <Button
+        android:id="@+id/stopPusher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="stopPusher"
+        android:text="暂停推送"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/startApp" />
+
+    <Button
+        android:id="@+id/restartPusher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="restartPusher"
+        android:text="开始推送"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/stopPusher" />
+
+    <Button
+        android:id="@+id/killApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onUnBinderService"
+        android:text="关闭视频对讲服务"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/restartPusher" />
+
+    <Button
+        android:id="@+id/showView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onShowView"
+        android:text="显示视频对讲"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/killApp" />
+
+    <Button
+        android:id="@+id/dismissView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDismissView"
+        android:text="隐藏视频对讲"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/showView" />
+
+</android.support.constraint.ConstraintLayout>
